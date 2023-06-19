@@ -1,0 +1,14 @@
+    .carousel-container {
+        width: 900%; /* Ajusta el ancho según tus necesidades */
+        height: 300px; /* Ajusta la altura según tus necesidades */
+        background-color: #f2f2f2; /* Color de fondo del carrusel */
+        overflow: hidden; /* Para ocultar cualquier contenido que exceda el tamaño del carrusel */
+    }
+
+    .carousel-container img {
+        width: 900%; /* Ajusta el ancho de las imágenes para que ocupen todo el espacio del carrusel */
+        height: auto; /* Ajusta la altura automáticamente para mantener la proporción original */
+        
+    }
+
+    
