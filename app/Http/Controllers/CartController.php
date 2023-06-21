@@ -14,17 +14,22 @@ class CartController extends Controller
 {
     public function add(Request $request){
        $producto = Producto::find($request->id);
+
+
        Cart::add(array(
         "id" => $producto->id,
         "name" => $producto->name,
         "price" => $producto->precio,
+        "cantidad"=>$producto->cantidad,
         "quantity" => 1,
         "attributes" => array(
             "image" => $producto->image,
             "slug" => $producto->slug
             )
         ));
+
         return redirect()->back()->with("success_message","Producto $producto->name agregado!");
+
 
     }
 
@@ -39,6 +44,7 @@ class CartController extends Controller
         ]);
         return back()->with('success',"Producto eliminado con éxito de su carrito.");
     }
+
     // limpiar el carrito
     public function clear(){
         Cart::clear();

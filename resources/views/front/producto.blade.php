@@ -49,8 +49,16 @@
                 <div class="col-sm-6">
                     <h2 class="fs-4 mt-3 mb-3 p-2 ">{{$producto->name}}</h2>
                     <p>COD: {{$producto->codigo}}</p>
-                    <p>Cantidad: <input type="text" class="form-contro" placeholder="0"> </p>
-                    <input type="submit" class="btn btn-success mt-4" value="AGREGAR AL CARRITO">
+                    <p>Cantidad: <input type="number" class="form-contro" placeholder="0"> </p>
+
+
+                    <form method="POST" action="{{route('cart.add')}}">
+                        @csrf
+                        <input name="id" type="hidden" value="{{$producto->id}}" value="{{$producto->image}}">
+                    <button class="btn btn-success btn-block" type="submit">AGREGAR AL CARRITO</button>
+
+
+
                 </div>
                 <div class="col-sm-12 p-2 bg-light">
                     {!!$producto->description!!}
@@ -76,7 +84,7 @@
                                 <div class="col-sm-6 p-0">
                                     <form method="POST" action="{{route('cart.add')}}">
                                         @csrf
-                                        <input name="id" type="hidden" value="{{$p->id}}">
+                                        <input name="id" type="hidden" value="{{$producto->id}}">
                                         <button class="btn btn-danger btn-block" type="submit">AGREGAR</button>
                                     </form>
                                 </div>

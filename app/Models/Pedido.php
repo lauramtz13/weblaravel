@@ -17,7 +17,7 @@ class Pedido extends Model
         'entregado',
         'user_id'
     ];
-   
+
     public function user()
     {
         return $this->belongsTo(User::class);
